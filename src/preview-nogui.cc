@@ -5,7 +5,10 @@
 namespace blossoms {
 
 void preview(const std::string&, const cv::Mat& img) {
-  // percentage of red'ish blossoms in image
-  std::cout << cv::mean(img)[0] << std::endl;
+  const auto nz = cv::countNonZero(img);
+  const auto perc = static_cast<double>(nz) / (img.rows * img.cols);
+
+  // percentage of red'ish blossoms in image as integer
+  std::cout << static_cast<int>(perc * 100) << std::endl;
 }
 }
