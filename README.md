@@ -11,13 +11,13 @@ Uses only webcam images for now; I can think of sensors for soil moisture, tempe
 
 You need: OpenCV2, C++11 compiler (tested with gcc 4.8, clang 3.5).
 
-    make -f env/makefile.g++ -j 4
+    make -C src -f ../env/makefile.g++ -j 4
 
 Note: see env directory.
 
 ## Usage
 
-    ./blossoms images/top-soil.jpg
+    ./src/blossoms images/top-soil.jpg
 
 ## License
 
