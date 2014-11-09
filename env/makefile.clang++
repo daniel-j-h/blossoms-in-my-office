@@ -1,0 +1,12 @@
+TARGET=blossoms
+OBJECTS=blossoms.o preview-gui.o filter.o input.o contours.o
+LDLIBS=-lstdc++ -lopencv_core -lopencv_imgproc -lopencv_highgui
+
+CXX=clang++
+CXXFLAGS=-std=c++11 -O2 -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic
+LDFLAGS=-Wl,-O1 -Wl,--hash-style=gnu -Wl,--sort-common -Wl,--demangle -Wl,--build-id
+
+$(TARGET): $(OBJECTS)
+
+clean:
+	rm -f *.o $(TARGET)
